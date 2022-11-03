@@ -10,6 +10,9 @@ import store from './store'
 
 
 import"../node_modules/bootstrap/dist/css/bootstrap.css"
+import "./style.css" ;
+
+
 
 
 createApp(App).use(store).use(router).mount('#app')
