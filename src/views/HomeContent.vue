@@ -9,17 +9,23 @@
         </div>
     </Div>
 
-    <div class="container-fluid">
-           
+    <div class=" row col-12">
+        <div class="container-fluid col-6 text" >
+           <List/>
+    </div>
+    <div class="container-fluid col-6 text" >
+          
+    </div>
     </div>
 </template>  
 <script>
 
+import List from '@/components/List.vue';
 
 
 export default{  
 
-
+ components:{ List}
 
 }
 </script>
