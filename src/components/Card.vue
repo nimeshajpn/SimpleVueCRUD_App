@@ -41,3 +41,12 @@
 
     </Div>
 </template>
+<script>
+
+
+export default {
+    
+  
+    
+}
+</script>
