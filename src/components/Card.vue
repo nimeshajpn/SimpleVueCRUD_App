@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <Div class="container">
-
+        <p>{{DataList}}</p>
         <Div  class=" m-2 p-2  card col-7 bg-light" style="height:150px ;" >
 
 
@@ -29,7 +29,7 @@
             </div>
             <div class="row m-0  ">
                 <div class="text-start  col-6 ">
-                    <label>Description : <i>100</i></label>
+                    <label>Description : <i>{{DataList}}</i></label>
                </div>
                
             </div>
@@ -42,11 +42,36 @@
     </Div>
 </template>
 <script>
-
+import { ApiConnection } from '@/services/ApiConnection';
 
 export default {
-    
-  
-    
+
+
+    constructor(){
+
+        
+
+
+
+
+    },
+
+    data :function() {
+        return{
+
+            DataList:[]
+
+        }
+    },
+    created : async function(){
+
+      let Response = await ApiConnection.getAll();
+
+      this.DataList=Response.data;
+
+
+
+
+    }
 }
 </script>
