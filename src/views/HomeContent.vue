@@ -11,7 +11,7 @@
 
     <div class=" row col-12">
         <div class="container-fluid col-6 text" >
-           <List/>
+         
            <Card/>
     </div>
     <div class="container-fluid col-6 text" >
@@ -21,13 +21,13 @@
 </template>  
 <script>
 
-import List from '@/components/List.vue';
+
 import Card from "@/components/Card.vue";
 
 
 export default{  
 
- components:{ List,Card}
+ components:{ Card}
 
 }
 </script>
