@@ -7,11 +7,12 @@ export class ApiConnection{
 
     static getAll(){
 
-     const dataUrl=this.url + '/Expense' ;
+     let dataUrl=this.url + '/Expense' ;
 
-     return axios.get(dataUrl);
-
-
+    
+      var a=  axios.get(dataUrl);
+      var b=a.data
+        return b
     }
 
 
