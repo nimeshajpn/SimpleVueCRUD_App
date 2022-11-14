@@ -7,12 +7,17 @@ export class ApiConnection{
 
     static getAll(){
 
-     let dataUrl=this.url + '/Expense' ;
+     let dataUrl=this.url +'/Expense' ;
 
     
-      var a=  axios.get(dataUrl);
-      var b=a.data
-        return b
+      return axios.get(dataUrl);
+      
+    }
+    static Delete(id){
+      console.log(id);
+      let dataUrl=this.url + '/Expense/' +id ;
+
+      return axios.delete(dataUrl)
     }
 
 

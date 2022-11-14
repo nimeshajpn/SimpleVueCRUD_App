@@ -1,39 +1,42 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <Div class="container">
-    <p>{{ DataList }}</p>
-    <Div class="m-2 p-2 card col-7 bg-light" style="height: 150px">
+  <Div class="container row">
+   
+  <div v-for="list of DataList" :key="list" class="col col-6">
+    <Div  class="m-2 p-2 card col-12 bg-light" style="height: *">
       <Div class="col-12 p-1">
         <div class="text-end">
           <a> <i class="p-1 fa fa-cogs fa-1x"></i> </a>
-          <a><i class="p-1 pe-0 fa fa-close fa-1x"></i> </a>
+          <a ><i  v-on:click="btnDelete(list.id)" class=" p-1 pe-0 fa fa-close fa-1x"></i> </a>
+        
         </div>
       </Div>
       <div class="row m-0">
         <div class="text-start col-6">
-          <label>Home</label>
+          <label>{{list.category}}</label>
         </div>
-        <div class="text-end col-6">
-          <label>2022/05/25</label>
-        </div>
-      </div>
-      <div class="row m-0">
-        <div class="text-start col-6">
-          <label>Amount : <i>100</i></label>
-        </div>
-        <div class="text-end col-6">
-          <label>Income</label>
+        <div class=" text-end col-6">
+          <label>{{list.date}}</label>
         </div>
       </div>
       <div class="row m-0">
-        <div class="text-start col-6">
+        <div class="text-start col-6"> 
+          <label>Amount : <a>{{list.amount}}</a></label>
+        </div>
+        <div class="text-end col-6">
+          <label>{{list.type}}</label>
+        </div>
+      </div>
+      <div class="row m-0">
+        <div class="text-start col-">
           <label
-            >Description : <i>{{ DataList }}</i></label
+            >Description : <a>{{list.description}}</a></label
           >
-          <button v-on:click="click"> Show Data</button>
+         
         </div>
       </div>
     </Div>
+  </div>
   </Div>
 </template>
 <script>
@@ -48,20 +51,27 @@ export default {
     };
   },
   created: async function () {
-    let Response = await ApiConnection.getAll();
-
+ 
+    let Response =await ApiConnection.getAll();
     this.DataList = Response.data;
 
     
   },
   methods:{
+    async loading(){
+        console.log('loading')
+      let Response =await ApiConnection.getAll();
+      this.DataList = Response.data;
 
-    click(){
 
-      let Response =  ApiConnection.getAll();
+    },
+     async btnDelete(id){
 
-this.DataList = Response.data;
+      
+      ApiConnection.Delete(id);
 
+      
+      window.location.reload();
 
     }
 

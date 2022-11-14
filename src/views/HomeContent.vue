@@ -9,12 +9,12 @@
         </div>
     </Div>
 
-    <div class=" row col-12">
-        <div class="container-fluid col-6 text" >
+    <div class=" row col-12 ">
+        <div class="container-fluid col-8 text" >
          
            <Card/>
-    </div>
-    <div class="container-fluid col-6 text" >
+        </div>
+    <div class="container-fluid col-4 text" >
           
     </div>
     </div>
