@@ -9,25 +9,29 @@
         </div>
     </Div>
 
+    
     <div class=" row col-12 ">
+        
         <div class="container-fluid col-8 text" >
-         
-           <Card/>
+            <Card/>
+           
         </div>
     <div class="container-fluid col-4 text" >
-          
+        <Create/>
     </div>
     </div>
+
+    
 </template>  
 <script>
 
 
 import Card from "@/components/Card.vue";
-
+import Create from "@/components/Create.vue";
 
 export default{  
 
- components:{ Card}
+ components:{ Card,Create}
 
 }
 </script>
