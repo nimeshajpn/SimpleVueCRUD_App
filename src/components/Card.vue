@@ -48,12 +48,27 @@ export default {
   data: function () {
     return {
       DataList: [],
+      DataList2: [],
+      
     };
   },
   created: async function () {
  
     let Response =await ApiConnection.getAll();
-    this.DataList = Response.data;
+    this.DataList2 = Response.data;
+
+     for(let b = 0 , a =  this.DataList2.length; a >0;a--,b++){
+     
+
+      this.DataList[b]=this.DataList2[a-1];
+
+     
+
+     
+
+
+     }
+     
 
     
   },
