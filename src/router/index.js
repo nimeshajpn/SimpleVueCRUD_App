@@ -1,7 +1,6 @@
-import AddContentVue from '@/views/AddContent.vue'
-import EditContentVue from '@/views/EditContent.vue'
+
 import HomeContent from '@/views/HomeContent.vue'
-import ViewContentVue from '@/views/ViewContent.vue'
+import AboutVue from '@/views/About.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 
@@ -12,20 +11,11 @@ const routes = [
     component: HomeContent
   },
   {
-    path: '/Add',
-    name: 'Add',
-    component: AddContentVue
+    path: '/About',
+    name: 'About',
+    component: AboutVue
   },
-  {
-    path: '/View',
-    name: 'View',
-    component: ViewContentVue
-  },
-  {
-    path: '/Edit',
-    name: 'Edit',
-    component: EditContentVue
-  },
+ 
 ]
 
 const router = createRouter({
