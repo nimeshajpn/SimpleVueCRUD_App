@@ -13,11 +13,21 @@
     <div class=" row col-12 ">
         
         <div class="container-fluid col-8 text" >
-            <Card/>
+            <Card v-on:reUpdateModel="upDateModelF($event)"/>
            
         </div>
-    <div class="container-fluid col-4 text" >
-        <Create/>
+    <div class="container-fluid col-4 text border-start border-3" >
+        
+        <div  v-if="updateModel == null" >
+            <Create/>
+        </div>
+        <div v-else>
+            <Create v-bind:upModel=updateM />
+        </div>
+
+      
+        
+
     </div>
     </div>
 
@@ -31,7 +41,41 @@ import Create from "@/components/Create.vue";
 
 export default{  
 
- components:{ Card,Create}
+ components:{ Card,Create},
+ 
+
+ data: function(){
+    return{
+
+        updateModel : {
+            category:'',
+            type:'',
+            date:'',
+            amount:0,
+            description:'',
+
+         },
+         updateM:'',
+
+    }
+ },
+ methods: {
+
+    upDateModelF(obj){
+        console.log(obj)
+
+    this.updateModel=obj
+    console.log("change")
+    console.log(this.updateModel)
+
+    console.log("change22")
+    this.updateM=this.updateModel
+    console.log(this.updateM)
+    }
+
+
+
+ }
 
 }
 </script>

@@ -6,7 +6,7 @@
     <Div  class="m-2 p-2 card col-12 bg-light" style="height: *">
       <Div class="col-12 p-1">
         <div class="text-end">
-          <a> <i class="p-1 fa fa-cogs fa-1x"></i> </a>
+          <a> <i v-on:click="btnUpdate(list)" class="p-1 fa fa-cogs fa-1x"></i> </a>
           <a ><i  v-on:click="btnDelete(list.id)" class=" p-1 pe-0 fa fa-close fa-1x"></i> </a>
         
         </div>
@@ -73,7 +73,14 @@ export default {
       
       window.location.reload();
 
-    }
+    },
+     btnUpdate(obj){
+      console.log("card");
+
+      this.$emit('reUpdateModel',obj)
+
+
+}
 
 
   }

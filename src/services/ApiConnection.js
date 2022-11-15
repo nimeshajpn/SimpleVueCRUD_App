@@ -19,6 +19,12 @@ export class ApiConnection{
 
       return axios.delete(dataUrl)
     }
+    static Create(obj){
+      
+      console.log(obj);
+      let dataUrl=this.url + '/Expense/' ;
+      return axios.post(dataUrl,obj);
+    }
 
 
 
