@@ -1,5 +1,6 @@
 <template>
-    <Div class="container-fluid  mt-3 ">
+    <div class="container-fluid">
+    <Div class="container-fluid   mt-3 ">
         <div class=" row">
             <div class="col">
                 <p class="h3  fw-bold" style="color: #880E4F;" > Add New Expense  
@@ -10,29 +11,27 @@
     </Div>
 
     
-    <div class=" row col-12 ">
+    <div class="  ">
+        <div class=" m-auto   row col-12 ">
         
-        <div class="container-fluid   col-0    col-sm-7 col-md-8 col-lg-8   col-xl-8  text" >
-            <Card v-on:reUpdateModel="upDateModelF($event)"/>
+                 <div class="container-fluid   col-0    col-sm-7 col-md-8 col-lg-8   col-xl-8  text" >
+                     <Card v-on:reUpdateModel="upDateModelF($event)"/>
            
-        </div>
-        <div class="container-fluid   col-12    col-sm-5 col-md-4 col-lg-4  col-xl-4   text border-start border-3" >
+                 </div>
+                    <div class="container-fluid   col-12    col-sm-5 col-md-4 col-lg-4  col-xl-4   text border-start border-3" >
         
-             <div v-if="updateM=='null'" >
-               <Create/>
-             </div>
+                           <div v-if="updateM=='null'" >
+                                 <Create/>
+                          </div>
 
-               <div  v-else>
-              <Update v-bind:DataModel="updateM"/>
-              </div>
-
-      
-        
-
+                          <div  v-else>
+                                 <Update v-bind:DataModel="updateM"/>
+                        </div>
+                     </div>
     </div>
     </div>
 
-    
+</div>
 </template>  
 <script>
 
