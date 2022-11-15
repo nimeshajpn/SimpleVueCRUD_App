@@ -1,6 +1,6 @@
 <template>
-    <Div>
-        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #880E4F;">
+    <Div >
+        <nav class="navbar navbar-expand-lg navbar-light ps-2 " style="background-color: #880E4F;">
   <a class="navbar-brand m-lg-2 " href="#" style="color: #F8F9FA;">Expense Manager</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

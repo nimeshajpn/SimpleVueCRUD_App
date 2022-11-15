@@ -15,9 +15,11 @@
 
                 <div class=" form"  style="margin-top: 10px;">
                     <input type="number" class="form-control" name="Amount" placeholder="Amount" v-model="dataModel.amount" >
+                    <p class="card text-center m-auto text-bg-secondary" v-show="ErrorFind">Empty !!</p>
                 </div>
                 <div class="form"  style="margin-top: 10px;">
                     <input  class="form-control" name="Amount" placeholder="Description"  v-model="dataModel.description">
+                    <p class="card text-center m-auto text-bg-secondary" v-show="ErrorFind">Empty !!</p>
                 </div>
                 <div class="form"  style="margin-top: 10px;">
                       <select class="form-control" name="Category" placeholder="Category" v-model="dataModel.category">
@@ -31,6 +33,7 @@
                                         <option>Pet</option>
                                         <option>Others</option>
                                     </select>
+                                    <p class="card text-center m-auto text-bg-secondary" v-show="ErrorFind">Empty !!</p>
                 </div>
                 <div class="form"  style="margin-top: 10px;">
                     <select class="form-control" name="Type"  placeholder="Type"  v-model="dataModel.type"  >
@@ -41,9 +44,11 @@
 
 
                     </select>
+                    <p class="card text-center m-auto text-bg-secondary" v-show="ErrorFind">Empty !!</p>
                 </div>    
                 <div class="form"  style="margin-top: 10px;">
                     <input type="datetime-local" class="form-control" name="Date"  v-model="dataModel.date">
+                    <p class="card text-center m-auto text-bg-secondary" v-show="ErrorFind">Empty !!</p>
                 </div>
                 <div class="form col-12  text-center"  style="margin-top: 10px;">
                    <input type="submit"   v-on:click="createE" class=" col-5 text-center form-group btn btn-primary m-1" >
@@ -58,6 +63,7 @@
 <script>
 
 import { ApiConnection } from "@/services/ApiConnection";
+
 export default {
    
     data: function(){
@@ -74,6 +80,7 @@ export default {
          createClose : true,
          updateClose : false,
          formName:'Create Form',
+         ErrorFind:false,
 
             
         }
@@ -82,9 +89,17 @@ export default {
     methods:{
 
         async createE(){
+            if(this.dataModel.amount=='' || this.dataModel.description=='' || this.dataModel.category=='' ||this.dataModel.type==''|| this.dataModel.date=='' )
+            {
+                this.ErrorFind=true;
+
+            }
+            else
+            {
+                ApiConnection.Create(this.dataModel)
+                window.location.reload();
+             }
             
-            ApiConnection.Create(this.dataModel)
-            window.location.reload();
         },
         closeCreate(){
 
@@ -93,10 +108,12 @@ export default {
         Clear(){
 
 
-            this.dataModel=null;
+            this.dataModel='';
             window.location.reload();
-        }
+        },
 
+
+       
 
 
 
