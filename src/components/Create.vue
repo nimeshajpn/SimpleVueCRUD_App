@@ -23,7 +23,7 @@
                 </div>
                 <div class="form"  style="margin-top: 10px;">
                       <select class="form-control" name="Category" placeholder="Category" v-model="dataModel.category">
-                        <option selected disabled>Category</option>
+                        <option :value="''" disabled selected>Category</option>
                                         <option>Food</option>
                                         <option>Clothing</option>
                                         <option>Fruits</option>
@@ -36,18 +36,18 @@
                                     <p class="card text-center m-auto text-bg-secondary" v-show="ErrorFind">Empty !!</p>
                 </div>
                 <div class="form"  style="margin-top: 10px;">
-                    <select class="form-control" name="Type"  placeholder="Type"  v-model="dataModel.type"  >
-
+                    <select class="form-control" name="Type"   placeholder="Type"  v-model="dataModel.type"  >
+                        <option :value="''" disabled selected>Type</option>
                                         <option>Income</option>
                                         <option>Expense</option>
-
+                      
 
 
                     </select>
                     <p class="card text-center m-auto text-bg-secondary" v-show="ErrorFind">Empty !!</p>
                 </div>    
                 <div class="form"  style="margin-top: 10px;">
-                    <input type="datetime-local" class="form-control" name="Date"  v-model="dataModel.date">
+                    <input type="datetime-local" class="form-control" name="Date" placeholder="Date"  v-model="dataModel.date">
                     <p class="card text-center m-auto text-bg-secondary" v-show="ErrorFind">Empty !!</p>
                 </div>
                 <div class="form col-12  text-center"  style="margin-top: 10px;">
@@ -81,7 +81,7 @@ export default {
          updateClose : false,
          formName:'Create Form',
          ErrorFind:false,
-
+         Type:['income','expense']
             
         }
     },
@@ -96,7 +96,7 @@ export default {
             }
             else
             {
-                ApiConnection.Create(this.dataModel)
+               await ApiConnection.Create(this.dataModel)
                 window.location.reload();
              }
             
