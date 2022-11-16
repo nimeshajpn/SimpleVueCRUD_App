@@ -3,7 +3,7 @@
 <template>
     <div v-show="createClose"  class="p-2 col-12 ">
         <form class="form-group  " >
-            <div class="form-control form-col col-12 p-3  bg-light"  >
+            <div class="form-control form-col col-12 p-3  bg-light shadow"  >
                 <div class="text-end">
                    
                      <a ><i  v-on:click="closeCreate" class=" p-1 pe-1 fa fa-close fa-1x"></i> </a>

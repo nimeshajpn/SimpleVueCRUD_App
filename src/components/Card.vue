@@ -3,7 +3,7 @@
   <Div class="container row">
    
   <div v-for="list of DataList" :key="list" class="col col-12         col-xl-6  col-sm-12 col-md-6 col-lg-6 ">
-    <Div  class="m-2 p-2 card col-12 bg-light" style="height: *">
+    <Div  class="m-2 p-2 card col-12 bg-light shadow" style="height: *">
       <Div class="col-12 p-1">
         <div class="text-end">
           <a> <i v-on:click="btnUpdate(list)" class="p-1 fa fa-cogs fa-1x"></i> </a>
